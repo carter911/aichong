@@ -56,6 +56,13 @@
                         <input type="radio" name="status" value="0" title="禁用" {if condition="$user.status elt 0" } checked="checked" {/if}>
                     </div>
                 </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">内部用户</label>
+                    <div class="layui-input-inline">
+                        <input type="radio" name="in_user" value="1" title="是" {if condition="$user.in_user gt 0" } checked="checked" {/if}>
+                        <input type="radio" name="in_user" value="0" title="否" checked="checked" {if condition="$user.in_user elt 0" } checked="checked" {/if}>
+                    </div>
+                </div>
                 <div class="btable-paged">
                     <div class="layui-main">
                         <div class="formbtngroup">

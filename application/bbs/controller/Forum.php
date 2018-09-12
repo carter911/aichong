@@ -299,6 +299,7 @@ class Forum extends HomeBase
             return array('code' => 0, 'msg' => '不要试图搞破坏哦');
         }
     }
+
     public function setstatus()
     {
         $data = $this->request->param();
