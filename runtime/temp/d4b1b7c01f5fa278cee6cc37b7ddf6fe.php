@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"/Users/zhongwu/Downloads/aichong/application/admin/view/index_adminindex.html";i:1536731350;}*/ ?>
 <!DOCTYPE html>
 
 <html>
@@ -38,17 +39,17 @@
                         <a class="update_cache" href="javascript:void(0)">清除缓存</a>
                     </li>
                     <li class="layui-nav-item">
-                        <a href="{:routerurl('index/index/index')}" target="_blank">浏览首页</a>
+                        <a href="<?php echo routerurl('index/index/index'); ?>" target="_blank">浏览首页</a>
                     </li>
 
                     <li class="layui-nav-item">
                         <a href="javascript:;" class="admin-header-user">
                             <img src="__ADMIN__/images/default.png" />
-                            <span>{:session('admin_name')}</span>
+                            <span><?php echo session('admin_name'); ?></span>
                         </a>
                         <dl class="layui-nav-child">
                             <dd>
-                                <a id="changemima" href="javascript:;" data-url="{:url('admin/change_password/diachange_password')}">
+                                <a id="changemima" href="javascript:;" data-url="<?php echo url('admin/change_password/diachange_password'); ?>">
                                     <i class="fa fa-user-circle" aria-hidden="true"></i> 修改密码</a>
                             </dd>
 
@@ -82,7 +83,7 @@
                 </ul>
                 <div class="layui-tab-content" style="min-height: 150px; padding: 5px 0 0 0;">
                     <div class="layui-tab-item layui-show">
-                        <iframe src="{:url('index/home')}"></iframe>
+                        <iframe src="<?php echo url('index/home'); ?>"></iframe>
                     </div>
                 </div>
             </div>
@@ -108,12 +109,12 @@
 
         <script type="text/javascript" src="__ADMIN__/plugins/layui/layui.js"></script>
         <script>
-            var navs = '{$menu}';
+            var navs = '<?php echo $menu; ?>';
 
             navs = JSON.parse(navs);
-            var adminname = "{:session('admin_name')}";
-            var logout = "{:url('login/logout')}";
-            var lockurl = "{:url('login/locker')}";
+            var adminname = "<?php echo session('admin_name'); ?>";
+            var logout = "<?php echo url('login/logout'); ?>";
+            var lockurl = "<?php echo url('login/locker'); ?>";
         </script>
 
         <script type="text/javascript" src="__ADMIN__/js/index.js"></script>
@@ -150,7 +151,7 @@
                     loading = layer.load(2, {
                         shade: [0.2, '#000']
                     });
-                    jq.getJSON('{:url("System/clear")}', function(data) {
+                    jq.getJSON('<?php echo url("System/clear"); ?>', function(data) {
                         if (data.code == 200) {
                             layer.close(loading);
                             layer.msg(data.msg, {
@@ -174,14 +175,14 @@
                     loading = layer.load(2, {
                         shade: [0.2, '#000']
                     });
-                    jq.getJSON('{:url("login/logout")}', function(data) {
+                    jq.getJSON('<?php echo url("login/logout"); ?>', function(data) {
                         if (data.code == 200) {
                             layer.close(loading);
                             layer.msg(data.msg, {
                                 icon: 1,
                                 time: 1000
                             }, function() {
-                                location.href = '{:url("login/index")}';
+                                location.href = '<?php echo url("login/index"); ?>';
                             });
                         } else {
                             layer.close(loading);
