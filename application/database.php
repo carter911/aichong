@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'type'            => 'mysql',
+    'hostname'        => '120.26.69.179',
+    'database'        => 'pet',
+    'username'        => 'root',
+    'password'        => 'sgb123&',
+    'hostport'        => '3306',
+    'dsn'             => '',
+    'params'          => [],
+    'charset'         => 'utf8',
+    'prefix'          => 'pet_',
+    'debug'           => true,
+    'deploy'          => 0,
+    'rw_separate'     => false,
+    'master_num'      => 1,
+    'slave_no'        => '',
+    'fields_strict'   => true,
+    'resultset_type'  => 'array',
+    'auto_timestamp'  => false,
+    'datetime_format' => 'Y-m-d H:i:s',
+    'sql_explain'     => false,
+    'builder'         => '',
+    'query'           => '\think\db\Query',
+];
